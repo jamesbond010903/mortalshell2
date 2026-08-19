@@ -17,6 +17,7 @@ const outfit = Outfit({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+// Fall back to the production domain when NEXT_PUBLIC_SITE_URL is unset.
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mortalshell-wiki.com";
 
 export const metadata: Metadata = {
