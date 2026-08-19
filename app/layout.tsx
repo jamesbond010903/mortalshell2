@@ -3,6 +3,7 @@ import { Cinzel, Outfit } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cinzel.variable} ${outfit.variable}`}>
       <body className="antialiased">
+        <GoogleAnalytics />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
