@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Mortal Shell II Guides — Walkthroughs, Tarstones & Bosses",
   description:
     "Browse every Mortal Shell II guide: achievement walkthroughs, Tarstone locations, Shell characters, fast travel, and boss strategies.",
+  alternates: { canonical: "/guides" },
 };
 
 const guides = [

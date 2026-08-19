@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Mortal Shell II Editions & Platforms — Prices and Bonuses",
   description:
     "Compare Mortal Shell II editions and platform details: Devout and Revered editions, release date, early access, PS5, Xbox, and Game Pass.",
+  alternates: { canonical: "/editions" },
 };
 
 const editions = [

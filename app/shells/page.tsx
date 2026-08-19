@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { shells } from "@/lib/data";
 import { PageHeader } from "@/components/PageHeader";
 import { EntityCard } from "@/components/EntityCard";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ConclusionSection } from "@/components/ConclusionSection";
+
+export const metadata: Metadata = {
+  title: "Mortal Shell II Shells — All 8 Playable Shells",
+  description:
+    "Every Mortal Shell II Shell with unlock locations and playstyles: Tiel, Eredrim, Sariel, Lazlo, Proxima, Smert, Gragu, and Sester Genessa.",
+  alternates: { canonical: "/shells" },
+};
 
 export default function ShellsPage() {
   return (

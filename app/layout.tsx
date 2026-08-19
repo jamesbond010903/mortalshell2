@@ -17,14 +17,14 @@ const outfit = Outfit({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mortalshell-wiki.com";
 
 export const metadata: Metadata = {
   title: "Mortal Shell II Wiki — Guide, Release Date",
   description:
     "Mortal Shell II Wiki helps players track release dates, editions, platforms, Shells, bosses, Tarstones, achievements, and early access updates in one fan hub.",
   keywords: "Mortal Shell II, Steam, PS5, Xbox, wiki, guide, release date",
-  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
+  metadataBase: new URL(siteUrl),
 };
 
 export default function RootLayout({

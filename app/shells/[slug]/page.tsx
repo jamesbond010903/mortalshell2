@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { shells } from "@/lib/data";
 import { ArticleHeader } from "@/components/ArticleHeader";
@@ -7,6 +8,21 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 
 export function generateStaticParams() {
   return shells.map((shell) => ({ slug: shell.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const shell = shells.find((s) => s.slug === slug);
+  if (!shell) return {};
+  return {
+    title: `${shell.name} — Mortal Shell II Shell Guide`,
+    description: shell.description,
+    alternates: { canonical: `/shells/${shell.slug}` },
+  };
 }
 
 export default async function ShellDetailPage({
