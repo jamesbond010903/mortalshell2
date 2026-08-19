@@ -1,0 +1,38 @@
+import type { Metadata } from "next";
+import { Cinzel, Outfit } from "next/font/google";
+import "./globals.css";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  weight: ["400", "500", "600", "700", "900"],
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+export const metadata: Metadata = {
+  title: "Mortal Shell II Wiki — Guide, Release Date",
+  description:
+    "Mortal Shell II Wiki helps players track release dates, editions, platforms, Shells, bosses, Tarstones, achievements, and early access updates in one fan hub.",
+  keywords: "Mortal Shell II, Steam, PS5, Xbox, wiki, guide, release date",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en" className={`${cinzel.variable} ${outfit.variable}`}>
+      <body className="antialiased">
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
+      </body>
+    </html>
+  );
+}
