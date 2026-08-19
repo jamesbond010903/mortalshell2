@@ -1,11 +1,19 @@
 import Image from "next/image";
 import type { Shell } from "@/lib/data";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 export function ArticleHeader({ shell }: { shell: Shell }) {
   return (
     <div className="border-b border-border bg-card">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-        <div className="flex flex-wrap gap-2">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Shells", href: "/shells" },
+            { label: shell.name },
+          ]}
+        />
+        <div className="mt-4 flex flex-wrap gap-2">
           {shell.tags.map((tag) => (
             <span
               key={tag}
